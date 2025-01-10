@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFVY9HLWCV"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WFVY9HLWCV');
+        </script>
+        
+        <title>De Goedkoopste Jägermeister</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Waar is Jägermeister op dit moment het goedkoopst?">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <style>
+            
+            html {
+                line-height: 1.5;
+                -webkit-text-size-adjust: 100%;
+                -moz-tab-size: 4;
+                -o-tab-size: 4;
+                tab-size: 4;
+                font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+                font-feature-settings: normal;
+                font-variation-settings: normal
+            }
+            
+            .header-div {
+                text-align: center;
+                width: fit-content;
+                margin: 0 auto;
+                
+                padding-top: 32px
+            }
+            
+            .header-div h2 {
+                margin-bottom: 0px;
+            }
+            
+            .header-div p {
+                margin-top: 10px;
+            }
+            
+            .filter-div {
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                margin: 0 auto;
+                
+                padding-top: 16px;
+                padding-bottom: 16px;
+                
+                width: 100%;
+                max-width: 343px;
+            }
+            
+            .filter-div h2 {
+                font-weight: 400;
+                margin: 0.3rem 0.3rem 0.3rem 0.3rem;
+            }
+            
+            .background-grey {
+                --tw-bg-opacity: 1;
+                background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+            }
+            
+            .rounded-lg {
+                border-radius: 0.5rem;
+            }
+            
+            .drop-shadow-lg {
+                box-shadow: 0 20px 8px -8px rgb(0 0 0 / .04), 0 6px 3px -3px rgb(0 0 0 / .1)
+            }
+            
+            .flex-column {
+                display: flex;
+                flex-direction: column;
+                width: 103.72px;
+                flex-grow: 0.4;
+            }
+            
+            .two-lists-in-one {
+                justify-content: space-between;
+            }
+            
+            .background-blue {
+                --tw-bg-opacity: 1;
+                background-color: rgb(51 141 180 / var(--tw-bg-opacity));
+            }
+            
+            .text-white {
+                --tw-text-opacity: 1;
+                color: rgb(255 255 255 / var(--tw-text-opacity));
+                
+                font-size: 0.80rem;
+                line-height: 2rem;
+            }
+            
+            .round-borders {
+                border-top-left-radius: 0.5rem;
+                border-top-right-radius: 0.5rem;
+            }
+            
+            .filter-list {
+                padding-left: 0.2rem;
+                padding-right: 0.3rem;
+            }
+            
+            .list-margin-top {
+                margin-top: 0.5rem;
+            }
+            
+            .list-margin-top-no-bottom {
+                margin-top: 0.5rem;
+                margin-bottom: 0
+            }
+            
+            .list-margin-bottom {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .misc-div {
+                text-align: center;
+                width: fit-content;
+                margin: 0 auto;
+                padding-bottom: 16px;
+            }
+            
+            #fulltable {
+                text-align: center;
+                margin: 0 auto;
+                
+                width: 100%;
+                max-width: 343px;
+            }
+            
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+            
+            table {
+                border-collapse: collapse;
+            }
+            
+            table, th, td {
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                border-left: 1px solid black;
+                border-right: 1px solid black;
+                padding: 6px;
+                text-align: left;
+            }
+            
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            
+            th {
+                background-color: #f2f2f2;
+            }
+            
+            td img { 
+                display: block;
+            }
+            
+            .credits-div {
+                text-align: center;
+                width: fit-content;
+                margin: 0 auto;
+                
+                padding-top: 32px;
+                padding-bottom: 16px
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <div id="degoedkoopstejager">
+              
+            <div class="header-div">
+                <h2>De Goedkoopste Jägermeister</h2>
+                <p>Prijzen zijn per liter!<br><a href="#" onclick="alert('Prijzen worden elke dag bijgewerkt.\nSuggesties voor nieuwe features zijn welkom!\nEmail: hetgoedkoopstebier@outlook.com'); return false;" target="_blank">Meer info</a></p>
+            </div>
+            
+            <div class="filter-div">
+                <div class="background-grey rounded-lg drop-shadow-lg flex-column">
+                    <div class="background-blue text-white round-borders">
+                        <h2>Winkel</h2>
+                    </div>
+                    <ul id="shop_name_list" class="filter-list list-margin-top">
+                        <li>                                 <label><input type="checkbox" @change="switch_after_select_all('shop_name')" checked="checked" value="shop_name__select_all"> <b>Alles</b></label></li>
+                        <li v-for="shop_name in uniqueShops"><label><input type="checkbox" @change="switch_after_regular('shop_name')"    checked="checked" :value="shop_name"> {{ shop_name }}</label></li>
+                    </ul>
+                </div>
+                
+                <div class="background-grey rounded-lg drop-shadow-lg flex-column">
+                    <div class="background-blue text-white round-borders">
+                        <h2>Bundel</h2>
+                    </div>
+                    <ul id="bundle_type_list" class="filter-list list-margin-top">
+                        <li>                                     <label><input type="checkbox" @change="switch_after_select_all('bundle_type')" checked="checked" value="bundle_type__select_all"> <b>Alles</b></label></li>
+                        <li v-for="bundle_type in uniqueBundles"><label><input type="checkbox" @change="switch_after_regular('bundle_type')"    checked="checked" :value="bundle_type"> {{ bundle_type }}</label></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <table id="fulltable" style="table-layout: fixed">
+                
+                <thead>
+                    <tr id="tableheader">
+                        <th style="width: 90px">Winkel</th>
+                        <!--<th style="width: 90px">Dranksoort</th>-->
+                        <th>Bundel</th>
+                        <th>Inhoud</th>
+                        <th>€/L</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr v-for="liquor_row in liquor_data" :data-category-shop="liquor_row.shop_name" :data-category-liquor="liquor_row.liquor_type" :data-category-bundle="liquor_row.bundle_type">
+                        
+                        <td>
+                            {{ liquor_row.shop_name }}
+                        </td>
+                        <td>
+                            <a :href="liquor_row.link" target="_blank"> {{ liquor_row.bundle_type }}</a>
+                        </td>
+                        <td>
+                            {{ liquor_row.total_ml }}
+                        </td>
+                        <td>
+                            {{ parseFloat(liquor_row.price_in_euro_per_liter_excl_deposit).toFixed(2).replace('.', ',')}}
+                        </td>
+                        
+                    </tr>
+                </tbody>
+                
+            </table>
+            
+            <div class="credits-div">
+                <p>Idee, backend en infrastructuur door Seb</p>
+                <p>Frontend mede mogelijk gemaakt door Boris</p>
+                <p>Met dank aan de maker van <a href="https://www.checkjebon.nl/">checkjebon.nl</a></p>
+            </div>
+            
+        </div>
+        
+        <script>
+            
+            const app = new Vue({
+                el: '#degoedkoopstejager',
+                data: {
+                    liquor_data: [],
+                
+                    init_state: true,
+                    init_link: window.location.href.split('?')[0]
+                },
+                computed: {
+                    uniqueShops() {
+                        const shops = this.liquor_data.map(row => row.shop_name);
+                        return [...new Set(shops)].sort();
+                    },
+                    uniqueBundles() {
+                        const bundles = this.liquor_data.map(row => row.bundle_type);
+                        return [...new Set(bundles)].sort();
+                    }
+                },
+                mounted() {
+                    fetch('https://raw.githubusercontent.com/hetgoedkoopstebier/dgj_data/main/jager.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            this.liquor_data = data;
+                        })
+                        .catch(error => {
+                            console.error('Error fetching JSON:', error);
+                        });
+                },
+                updated() {
+                    
+                    if (this.init_state) {
+                        
+                        this.init_state = false;
+                        
+                        const urlParams = new URLSearchParams(window.location.search);
+                        
+                        var myMap = new Map();
+                        myMap.set('shop_name',      this.uniqueShops);
+                        myMap.set('bundle_type',    this.uniqueBundles);
+                        
+                        for (const [key, unique_array] of myMap.entries()) {
+                            
+                            const selected_elements = urlParams.get(key);
+                            
+                            if (selected_elements) {
+                                
+                                const full_set    = new Set(unique_array);
+                                const markThese   = new Set(selected_elements.split(','));
+                                const unmarkThese = full_set.difference(markThese);
+                                                            
+                                unmarkThese.forEach(function (theValue) {
+                                    document.querySelector(`input[type="checkbox"][value="${theValue.replace('_', ' ')}"]`).checked = false;
+                                });
+                                
+                                document.querySelector(`input[type="checkbox"][value="${key}__select_all"]`).checked = false;
+                                
+                            }
+                        }
+                        
+                    }
+                },
+                methods: {
+                    
+                    filterTable() {
+                        
+                        const selectedShops = Array.from(document.querySelectorAll('#shop_name_list input[type="checkbox"]:checked'))
+                            .filter(cb => cb.id != "shop_name__select_all")
+                            .map(cb => cb.value);
+                        const selectedBundles = Array.from(document.querySelectorAll('#bundle_type_list input[type="checkbox"]:checked'))
+                            .filter(cb => cb.id != "bundle_type__select_all")
+                            .map(cb => cb.value);
+                        
+                        var url_append = [];
+                        if (selectedShops.length > 0 && selectedBundles.length > 0) {
+                            
+                            if (!document.querySelector(`input[type="checkbox"][value="shop_name__select_all"]`).checked) {
+                                url_append.push("shop_name=" + selectedShops.join(",").replace(" ", "_"));
+                            };
+                            if (!document.querySelector(`input[type="checkbox"][value="bundle_type__select_all"]`).checked) {
+                                url_append.push("bundle_type=" + selectedBundles.join(",").replace(" ", "_"));
+                            };
+                            
+                        };
+                            
+                        url_appendix = (url_append.length > 0) ? "?" + url_append.join("&") : this.init_link;
+                        window.history.replaceState(null, null, url_appendix);
+                        
+                        const rows = document.querySelectorAll('#fulltable tbody tr');
+                        
+                        odd_element = 1;
+                        
+                        for (let row of rows) {
+                            
+                            const matchesShop      = selectedShops.includes(     row.getAttribute('data-category-shop'));
+                            const matchesBundle    = selectedBundles.includes(   row.getAttribute('data-category-bundle'));
+                            
+                            if (matchesShop && matchesBundle) {
+                                row.style.display = 'table-row';
+                                
+                                if (odd_element == 1) {
+                                    row.style.backgroundColor = "#fff";
+                                    row.style.color = "#000";
+                                    odd_element = 0
+                                } else {
+                                    row.style.backgroundColor = "#f1f1f1";
+                                    row.style.color = "#000";
+                                    odd_element = 1
+                                }
+                                
+                            } else {
+                                row.style.display = 'none';
+                            }
+                        };
+                        
+                    },
+                    
+                    switch_after_select_all(which_filter) {
+                        var ref = this;
+                        
+                        const thisCheckBox = document.querySelector(`input[type="checkbox"][value="${which_filter}__select_all"]`);
+                        const allCheckboxes = document.querySelectorAll(`#${which_filter}_list input[type="checkbox"]:not([value="${which_filter}__select_all"])`);
+                        allCheckboxes.forEach(cb => cb.checked = thisCheckBox.checked);
+                        
+                        ref.filterTable();
+                    },
+                    
+                    switch_after_regular(which_filter) {
+                        var ref = this;
+                        
+                        const allCheckboxes = document.querySelectorAll(`#${which_filter}_list input[type="checkbox"]:not([value="${which_filter}__select_all"])`);
+                        const allChecked = Array.from(allCheckboxes).every(cb => cb.checked);
+                        document.querySelector(`input[type="checkbox"][value="${which_filter}__select_all"]`).checked = allChecked;
+                        
+                        ref.filterTable();
+                    },
+                }
+            });
+        </script>
+    </body>
+</html>
